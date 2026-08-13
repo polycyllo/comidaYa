@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/*
+ * Burger King Bolivia color tokens, consolidated from its public routes.
+ * Declaring them with @theme exposes the variables globally and generates
+ * Tailwind utilities such as bg-red, text-brown and border-may-10.
+ */
+@theme static {
+  /* Brand */
+  --color-red: #d62300;
+  --color-orange: #ff8732;
+  --color-yellow: #ffaa00;
+
+  /* Text */
+  --color-brown: #502314;
+  --color-brown-20: #77594f;
+  --color-brown-dark: #3c1a0f;
+
+  /* Surfaces */
+  --color-may: #f5ebdc;
+  --color-may-10: #e4d7c8;
+  --color-may-20: #e5dedc;
+  --color-light-active: #c9bbb6;
+  --color-white: #fff;
+
+  /* Neutrals */
+  --color-black: #000;
+  --color-gray: #8e98a8;
+  --color-gray-20: #717171;
+  --color-gray-40: #f5f5f5;
+  --color-gray-50: oklch(98.5% 0.002 247.839);
+  --color-gray-100: oklch(96.7% 0.003 264.542);
+
+  /* Feedback and utility states */
+  --color-red-20: #d32f2f;
+  --color-red-500: oklch(63.7% 0.237 25.331);
+  --color-red-600: oklch(57.7% 0.245 27.325);
+  --color-green: #199137;
+  --color-green-10: #198737;
+  --color-blue: #014361;
+  --color-blue-10: #0288d1;
+  --color-light-blue: #e5f6fd;
+  --color-amber-50: oklch(98.7% 0.022 95.277);
+  --color-yellow-20: #fbbf24;
+
+  /* Transparency, overlays and shadows */
+  --color-transparent: #0000;
+  --color-black-10: rgba(0, 0, 0, 0.1);
+  --color-black-15: #00000026;
+  --color-black-20: rgba(0, 0, 0, 0.2);
+  --color-black-40: rgba(0, 0, 0, 0.4);
+  --color-black-59: rgba(0, 0, 0, 0.59);
+}
