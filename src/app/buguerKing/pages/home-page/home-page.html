@@ -1,4 +1,20 @@
-<p>home page</p>
-<p>home page</p>
-<p>home page</p>
-<p>home page</p>
+<section class="bg-may">
+  <div class="flex justify-center p-5">
+    <img
+      src="/img_home.jpeg"
+      alt="Promocion principal"
+      class="rounded-4xl md:h-[400px] mx-auto w-full object-contain"
+    />
+  </div>
+  <section class="mt-14 px-10 lg:px-40">
+    <div class="flex justify-between font-serif text-xl text-brown-dark font-bold">
+      <h2 class="">Menú</h2>
+      <h2>Ver todo</h2>
+    </div>
+    <div class="mt-7 flex gap-4 overflow-x-auto px-2">
+      @for (item of menuItems(); track item.title) {
+        <app-menu-card [item]="item" class="shrink-0" />
+      }
+    </div>
+  </section>
+</section>
