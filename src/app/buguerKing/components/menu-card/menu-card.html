@@ -1,0 +1,12 @@
+<article
+  class="w-[200px] rounded-4xl overflow-hidden hover:scale-105 transition-transform duration-300 my-2"
+>
+  <div>
+    <img
+      [src]="item().img"
+      [alt]="item().title"
+      class="object-contain w-full h-full hover:shadow-xl"
+    />
+  </div>
+  <h3 class="text-center mt-3 text-brown font-serif font-bold">{{ item().title }}</h3>
+</article>
