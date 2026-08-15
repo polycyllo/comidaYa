@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { LucideMenu, LucideSearch, LucideShoppingCart } from '@lucide/angular';
 
 @Component({
   selector: 'app-nav',
-  imports: [],
+  imports: [LucideSearch, LucideShoppingCart, LucideMenu],
   templateUrl: './nav.html',
-  styleUrl: './nav.css',
 })
 export class Nav {}
