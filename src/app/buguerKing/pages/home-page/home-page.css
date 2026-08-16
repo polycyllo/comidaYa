@@ -1,0 +1,7 @@
+.menu-carousel {
+  scrollbar-width: none;
+}
+
+.menu-carousel::-webkit-scrollbar {
+  display: none;
+}

@@ -11,10 +11,23 @@
       <h2 class="">Menú</h2>
       <h2>Ver todo</h2>
     </div>
-    <div class="mt-7 flex gap-4 overflow-x-auto px-2">
+    <div
+      #menuCarousel
+      class="menu-carousel mt-7 flex gap-4 overflow-x-auto px-2"
+      [class.cursor-grab]="!isDragging()"
+      [class.cursor-grabbing]="isDragging()"
+      [class.select-none]="isDragging()"
+      (pointerdown)="startMenuDrag($event, menuCarousel)"
+      (pointermove)="moveMenuDrag($event, menuCarousel)"
+      (pointerup)="endMenuDrag($event, menuCarousel)"
+      (pointercancel)="endMenuDrag($event, menuCarousel)"
+      (dragstart)="$event.preventDefault()"
+    >
       @for (item of menuItems(); track item.title) {
         <app-menu-card [item]="item" class="shrink-0" />
       }
     </div>
+
+    <app-see-locations />
   </section>
 </section>
