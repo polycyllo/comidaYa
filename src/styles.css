@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Krub:wght@400;700&family=Staatliches&display=swap');
+@import 'tailwindcss';
 
 /*
  * Burger King Bolivia color tokens, consolidated from its public routes.
@@ -50,4 +51,8 @@
   --color-black-20: rgba(0, 0, 0, 0.2);
   --color-black-40: rgba(0, 0, 0, 0.4);
   --color-black-59: rgba(0, 0, 0, 0.59);
+}
+
+@theme {
+  --font-fredoka: 'Fredoka', sans-serif;
 }
