@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './footer.html',
 })
-export class Footer {}
+export class Footer {
+
+  protected readonly currentYear = new Date().getFullYear();
+}
