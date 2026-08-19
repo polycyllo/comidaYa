@@ -4,21 +4,18 @@
       <img src="/brand/burguer-king-logo.png" alt="Burger King" class="max-h-12" />
     </a>
 
-    <ul class="flex items-center gap-5 text-sm">
+     <!-- ToDo: change the text color and the brand font  -->
+    <ul class="flex items-center gap-5 font-semibold text-lg  ">
       <li>
-        <button type="button" class="flex gap-1">
-          <span>Buscar</span>
-        </button>
+        <nav-options label="Buscar" [icon]="search"></nav-options>
       </li>
 
       <li>
-        
+        <nav-options label="Carrito" [icon]="shoppingCart"></nav-options>
       </li>
 
-      <li>
-        <button type="button" class="flex gap-1">
-          <span>Menú</span>
-        </button>
+      <li >
+        <nav-options label="Menú" [icon]="menuIcon"></nav-options>
       </li>
     </ul>
   </nav>

@@ -50,4 +50,8 @@
   --color-black-20: rgba(0, 0, 0, 0.2);
   --color-black-40: rgba(0, 0, 0, 0.4);
   --color-black-59: rgba(0, 0, 0, 0.59);
+
+  /* Fonts */
+  --font-bk-title: 'Titan One', cursive;
+  --font-bk-body: 'Fredoka', sans-serif;
 }
