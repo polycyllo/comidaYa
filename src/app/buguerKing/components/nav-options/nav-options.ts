@@ -7,8 +7,6 @@ import { LucideAngularModule, LucideIconData } from 'lucide-angular';
   templateUrl: './nav-options.html',
 })
 export class NavOptions {
-
   label = input.required<string>();
   icon = input.required<LucideIconData>();
-
 }

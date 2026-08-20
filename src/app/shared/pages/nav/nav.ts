@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavOptions } from "../../../buguerKing/components/nav-options/nav-options";
+import { NavOptions } from '../../../buguerKing/components/nav-options/nav-options';
 import { ShoppingCart, Search, MenuIcon } from 'lucide-angular/src/icons';
 
 @Component({
@@ -8,9 +8,7 @@ import { ShoppingCart, Search, MenuIcon } from 'lucide-angular/src/icons';
   templateUrl: './nav.html',
 })
 export class Nav {
-
-  readonly shoppingCart = ShoppingCart
-  readonly search = Search
-  readonly menuIcon = MenuIcon
-
+  readonly shoppingCart = ShoppingCart;
+  readonly search = Search;
+  readonly menuIcon = MenuIcon;
 }
