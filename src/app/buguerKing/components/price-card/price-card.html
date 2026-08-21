@@ -1,15 +1,14 @@
 <div
-  class="bg-white rounded-xl md:rounded-4xl flex gap-4 px-5 py-3 items-center border-2 border-orange justify-between sm:h-[185px] h-[100px] md:h-[100px] lg:h-[185px]"
+  class="bg-white rounded-xl md:rounded-4xl flex gap-4 px-5 py-3 items-center border-2 justify-between sm:h-[185px] h-[100px] md:h-[100px] lg:h-[185px]"
+  [class.border-orange]="isSelected()"
+  [class.border-transparent]="!isSelected()"
+  [class.px-6]="isSelected()"
 >
   <div class="flex justify-center items-center gap-4">
-    <img
-      src="/menu/category/kingAhorro/americana.png"
-      alt="jijiji"
-      class="sm:w-[140px] w-[60px] md:w-[60px] lg:w-[140px]"
-    />
+    <img [src]="data().img" alt="jijiji" class="sm:w-[140px] w-[60px] md:w-[60px] lg:w-[140px]" />
     <div>
-      <h3 class="font-fredoka text-4xl font-extrabold text-brown">Americana</h3>
-      <p class="text-red font-fredoka font-semibold">Bs. 20.00</p>
+      <h3 class="font-fredoka text-4xl font-extrabold text-brown">{{ data().name }}</h3>
+      <p class="text-red font-fredoka font-semibold">Bs. {{ data().price }}</p>
     </div>
   </div>
   <svg lucideArrowRight size="18"></svg>

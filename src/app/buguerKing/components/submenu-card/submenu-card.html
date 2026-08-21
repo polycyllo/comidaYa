@@ -1,0 +1,20 @@
+<div class="bg-white rounded-4xl flex flex-col justify-center items-center gap-y-4 py-5">
+  <h3 class="font-fredoka text-4xl font-extrabold text-brown">{{ data()?.name }}</h3>
+  <p class="text-brown font-fredoka self-start px-10">Elegir tamaño</p>
+
+  <div class="flex flex-col w-full px-10 gap-y-5">
+    @for (item of data()?.subMenu; track $index) {
+      <div
+        class="rounded-xl border border-gray-200 p-3 w-full max-w-[650px] shadow-xs"
+        [class.bg-red-50]="selectedOption() === item.id"
+        [class.border-red]="selectedOption() === item.id"
+        (click)="setSelectedOption(item.id)"
+      >
+        <h3 class="font-fredoka text-xl font-semibold text-brown">
+          {{ item.name }}
+        </h3>
+        <p class="text-red font-fredoka text-sm">Bs. {{ item.price }}</p>
+      </div>
+    }
+  </div>
+</div>
