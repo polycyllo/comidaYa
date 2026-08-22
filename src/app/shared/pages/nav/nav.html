@@ -1,51 +1,67 @@
 <header class="relative z-10 bg-may shadow-md">
   <nav
     aria-label="Navegación principal"
-    class="mx-auto grid max-w-[1800px] grid-cols-[auto_1fr_auto] items-center gap-3 px-4 py-3 text-brown sm:px-6 lg:px-8"
+    class="mx-auto flex max-w-[1800px] items-center gap-2 px-4 py-3 text-brown sm:px-6 lg:grid lg:grid-cols-[auto_minmax(16rem,24rem)_auto] lg:gap-6 lg:px-8"
   >
     <div class="flex items-center gap-3 lg:gap-6">
       <a href="/" aria-label="Ir al inicio" class="shrink-0">
         <img src="/brand/burguer-king-logo.png" alt="Burger King" class="max-h-12 lg:max-h-16" />
       </a>
 
-      <ul class="hidden items-center gap-5 font-semibold lg:flex" aria-label="Secciones principales">
+      <ul
+        class="hidden items-center gap-5 font-semibold lg:flex"
+        aria-label="Secciones principales"
+      >
         <li>
-          <nav-options label="Menú" [icon]="menuIcon"></nav-options>
+          <nav-options label="Menú"></nav-options>
         </li>
         <li class="hidden xl:block">
-          <nav-options label="Cupones y ofertas" [icon]="shoppingBag"></nav-options>
+          <nav-options label="Cupones y ofertas"></nav-options>
         </li>
       </ul>
     </div>
 
-    <div class="hidden min-w-0 justify-self-center 2xl:block 2xl:w-full 2xl:max-w-96">
+    <div class="hidden min-w-0 justify-self-center lg:block lg:w-full lg:max-w-96">
       <label for="product-search" class="sr-only">Buscar oferta o producto</label>
       <input
         id="product-search"
         type="search"
         placeholder="Buscar oferta por nombre de producto"
-        class="w-full rounded-2xl bg-white px-5 py-3 text-sm outline-none placeholder:text-brown-20 focus-visible:ring-2 focus-visible:ring-brown"
+      class="w-full rounded-2xl bg-white px-5 py-3 text-sm outline-none placeholder:text-brown-20 focus-visible:ring-2 focus-visible:ring-brown"
       />
     </div>
 
-    <ul class="flex items-center justify-end gap-2 font-semibold sm:gap-4">
-      <li class="lg:hidden">
-        <nav-options label="Menú" [icon]="menuIcon"></nav-options>
+    <ul
+      class="grid flex-1 grid-cols-3 items-center font-semibold lg:flex lg:flex-none lg:items-center lg:justify-end lg:gap-4"
+    >
+      <li class="hidden overflow-hidden rounded-2xl bg-may-10 lg:flex lg:items-stretch">
+        <div class="flex items-center px-5 py-3">
+          <nav-options label="Recoger" [icon]="shoppingBag"></nav-options>
+        </div>
+
+        <div class="hidden items-stretch rounded-2xl bg-brown text-white xl:flex -mr-1.5">
+          <div class="flex items-center px-4">
+            <nav-options [label]="address()" [icon]="mapPin"></nav-options>
+          </div>
+
+          <div class="flex items-center px-4">
+            <div class="rounded-xl bg-yellow px-5 py-1.5 text-brown">
+              <nav-options label="Cambiar" [icon]="pen"></nav-options>
+            </div>
+          </div>
+        </div>
       </li>
-      <li class="hidden lg:block">
-        <nav-options label="Recoger" [icon]="shoppingBag"></nav-options>
-      </li>
-      <li class="hidden xl:block">
-        <nav-options [label]="address()" [icon]="mapPin"></nav-options>
-      </li>
-      <li class="hidden xl:block">
-        <nav-options label="Cambiar" [icon]="pen"></nav-options>
-      </li>
-      <li class="2xl:hidden">
+
+      <li class="justify-self-center lg:hidden">
         <nav-options label="Buscar" [icon]="search"></nav-options>
       </li>
-      <li>
+
+      <li class="justify-self-center rounded-full px-6 py-3 lg:bg-red lg:px-10 lg:text-white">
         <nav-options label="Carrito" [icon]="shoppingCart"></nav-options>
+      </li>
+
+      <li class="justify-self-center lg:hidden">
+        <nav-options label="Menú" [icon]="menuIcon"></nav-options>
       </li>
     </ul>
   </nav>

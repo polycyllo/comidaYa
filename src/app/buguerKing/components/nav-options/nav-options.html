@@ -1,4 +1,6 @@
 <button type="button" class="flex items-center gap-2">
-  <lucide-icon [img]="icon()" label="label()" class="h-5 w-5"></lucide-icon>
-  <span class="">{{ label() }}</span>
+  @if (icon(); as navIcon) {
+    <lucide-icon [img]="navIcon" [attr.aria-label]="label()" class="h-5 w-5"></lucide-icon>
+  }
+  <span>{{ label() }}</span>
 </button>
