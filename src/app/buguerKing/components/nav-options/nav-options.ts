@@ -8,5 +8,5 @@ import { LucideAngularModule, LucideIconData } from 'lucide-angular';
 })
 export class NavOptions {
   label = input.required<string>();
-  icon = input.required<LucideIconData>();
+  icon = input<LucideIconData>();
 }
