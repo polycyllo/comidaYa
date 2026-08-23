@@ -10,12 +10,28 @@
     <div class="w-50 sm:order-2 sm:w-full sm:max-w-125 sm:pb-6">
       <img src="brand/logo-footer.svg" alt="logo footer" />
     </div>
-    <ul class="flex flex-col gap-5 font-semibold sm:flex-row sm:gap-10">
-      <li>Menu</li>
-      <li>Cupones y ofertas</li>
-      <li>Términos y condiciones</li>
-      <li class="hidden">Políticas de privacidad</li>
-    </ul>
+    <nav aria-label="Enlaces del sitio">
+      <ol class="flex flex-col gap-5 font-semibold sm:flex-row sm:gap-10">
+        <li>
+          <a href="/menu" class="transition-colors hover:text-yellow focus-visible:text-yellow">Menú</a>
+        </li>
+        <li>
+          <a href="/cupones-y-ofertas" class="transition-colors hover:text-yellow focus-visible:text-yellow">
+            Cupones y ofertas
+          </a>
+        </li>
+        <li>
+          <a href="/terminos-y-condiciones" class="transition-colors hover:text-yellow focus-visible:text-yellow">
+            Términos y condiciones
+          </a>
+        </li>
+        <li>
+          <a href="/politicas-de-privacidad" class="transition-colors hover:text-yellow focus-visible:text-yellow md:hidden">
+            Políticas de privacidad
+          </a>
+        </li>
+      </ol>
+    </nav>
   </div>
 
   <ul class="flex items-center gap-8" aria-label="Redes sociales">
@@ -37,7 +53,7 @@
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Visitar Burger King Bolivia en Instagram"
-        class="bg-cream flex size-12 items-center justify-center rounded-full bg-may transition hover:bg-yellow focus-visible:outline-2 focus-visible:outline-offset-4 sm:size-18"
+        class="bg-crea flex size-12 items-center justify-center rounded-full bg-may transition hover:bg-yellow focus-visible:outline-2 focus-visible:outline-offset-4 sm:size-18"
       >
         <img src="/icons/social/instagram.svg" alt="" class="size-8 sm:size-10" />
       </a>
@@ -59,6 +75,8 @@
   <hr />
   <div class="font-semibold sm:flex sm:flex-row sm:justify-between">
     <span>© {{ currentYear }} Burger King Bolivia. Todos los derechos reservados.</span>
-    <a href="" class="hover:text-yellow">Politicas de privacidad</a>
+    <a href="/politicas-de-privacidad" class="transition-colors hover:text-yellow focus-visible:text-yellow">
+      Políticas de privacidad
+    </a>
   </div>
 </footer>

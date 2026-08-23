@@ -21,13 +21,19 @@
       </ul>
     </div>
 
-    <div class="hidden min-w-0 justify-self-center lg:block lg:w-full lg:max-w-96">
-      <label for="product-search" class="sr-only">Buscar oferta o producto</label>
+    <div class="hidden min-w-0 justify-self-center lg:relative lg:flex lg:w-full lg:max-w-96">
+      <label for="product-search" class="sr-only"> Buscar oferta o producto </label>
+
+      <lucide-icon
+        [img]="search"
+        class="absolute top-1/2 right-4 h-5 w-5 -translate-y-1/2 text-brown-20"
+      ></lucide-icon>
+
       <input
         id="product-search"
         type="search"
         placeholder="Buscar oferta por nombre de producto"
-      class="w-full rounded-2xl bg-white px-5 py-3 text-sm outline-none placeholder:text-brown-20 focus-visible:ring-2 focus-visible:ring-brown"
+        class="w-full rounded-2xl bg-white py-3 pr-5 pl-12 text-sm outline-none placeholder:text-brown-20 focus-visible:ring-2 focus-visible:ring-brown"
       />
     </div>
 
@@ -39,13 +45,13 @@
           <nav-options label="Recoger" [icon]="shoppingBag"></nav-options>
         </div>
 
-        <div class="hidden items-stretch rounded-2xl bg-brown text-white xl:flex -mr-1.5">
+        <div class="-mr-1.5 hidden items-stretch rounded-2xl bg-brown text-white xl:flex">
           <div class="flex items-center px-4">
             <nav-options [label]="address()" [icon]="mapPin"></nav-options>
           </div>
 
           <div class="flex items-center px-4">
-            <div class="rounded-xl bg-yellow px-5 py-1.5 text-brown">
+            <div class="rounded-xl bg-yellow px-5 py-1.5 text-brown hover:bg-yellow-20">
               <nav-options label="Cambiar" [icon]="pen"></nav-options>
             </div>
           </div>
@@ -56,7 +62,9 @@
         <nav-options label="Buscar" [icon]="search"></nav-options>
       </li>
 
-      <li class="justify-self-center rounded-full px-6 py-3 lg:bg-red lg:px-10 lg:text-white">
+      <li
+        class="justify-self-center rounded-full px-6 py-3 hover:bg-brown lg:bg-red lg:px-10 lg:text-white"
+      >
         <nav-options label="Carrito" [icon]="shoppingCart"></nav-options>
       </li>
 
