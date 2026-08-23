@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Krub:wght@400;700&family=Staatliches&display=swap');
 @import 'tailwindcss';
 
 /*
@@ -51,7 +52,9 @@
   --color-black-40: rgba(0, 0, 0, 0.4);
   --color-black-59: rgba(0, 0, 0, 0.59);
 
-  /* Fonts */
-  --font-bk-title: 'Titan One', cursive;
-  --font-bk-body: 'Fredoka', sans-serif;
+  --bg-primary: rgba();
+}
+
+@theme {
+  --font-fredoka: 'Fredoka', sans-serif;
 }
