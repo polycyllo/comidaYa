@@ -1,1 +1,8 @@
-<p>menu-category works!</p>
+<ul class="flex gap-4 overflow-x-auto">
+  @for (category of categories(); track category.title) {
+    <menu-category-cards
+      [imageUrl]="category.img"
+      [label]="category.title"
+    />
+  }
+</ul>
