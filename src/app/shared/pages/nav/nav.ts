@@ -1,9 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { NavOptions } from '../../../buguerKing/components/nav-options/nav-options';
+import { ShoppingCart, Search, MenuIcon, ShoppingBag, MapPin, Pen } from 'lucide-angular/src/icons';
+import { LucideAngularModule, LucideIconData } from 'lucide-angular';
 
 @Component({
   selector: 'app-nav',
-  imports: [],
+  imports: [NavOptions, LucideAngularModule],
   templateUrl: './nav.html',
-  styleUrl: './nav.css',
 })
-export class Nav {}
+export class Nav {
+  readonly shoppingCart = ShoppingCart;
+  readonly search = Search;
+  readonly menuIcon = MenuIcon;
+  readonly shoppingBag = ShoppingBag
+  readonly mapPin = MapPin
+  readonly pen = Pen
+
+  address = signal("BK Ballivian")
+}
