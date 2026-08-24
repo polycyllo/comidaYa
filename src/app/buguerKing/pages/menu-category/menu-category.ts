@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
-import { MenuCategoryCards } from "../../components/menu-category-cards/menu-category-cards";
+import { MenuCategoryCards } from '../../components/menu-category-cards/menu-category-cards';
 import { MenuItem } from '../../interfaces/MenuItem';
-import { MenuCard } from "../../components/menu-card/menu-card";
+import { MenuCard } from '../../components/menu-card/menu-card';
 import { MenuProduct } from '../../interfaces/MenuProduct';
 import { MENU_PRODUCTS } from '../../data/menu-products.data';
 
@@ -15,7 +15,6 @@ interface MenuCategoryItem extends MenuItem {
   templateUrl: './menu-category.html',
 })
 export default class MenuCategory {
-
   readonly categories = signal(MENU_CATEGORY_ITEMS);
   readonly products = signal(MENU_PRODUCTS);
 

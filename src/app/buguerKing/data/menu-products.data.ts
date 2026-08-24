@@ -6,7 +6,11 @@ export const MENU_PRODUCTS: MenuProduct[] = [
   { id: 'combo-whopper-doble', categoryId: 'combos-parrilla', title: 'Combo Whopper Doble' },
   { id: 'combo-stacker-doble', categoryId: 'combos-parrilla', title: 'Combo Stacker Doble' },
   { id: 'combo-steakhouse', categoryId: 'combos-parrilla', title: 'Combo Steakhouse' },
-  { id: 'combo-americana-queso', categoryId: 'combos-parrilla', title: 'Combo Americana con Queso' },
+  {
+    id: 'combo-americana-queso',
+    categoryId: 'combos-parrilla',
+    title: 'Combo Americana con Queso',
+  },
   { id: 'combo-king-pollo', categoryId: 'combos-pollo', title: 'Combo King de Pollo' },
   { id: 'combo-dueto-pollo', categoryId: 'combos-pollo', title: 'Combo Dueto de Pollo' },
   { id: 'combo-chicken-fries', categoryId: 'combos-pollo', title: 'Combo Chicken Fries' },

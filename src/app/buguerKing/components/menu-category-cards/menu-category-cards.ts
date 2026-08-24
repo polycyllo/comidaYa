@@ -7,11 +7,7 @@ import MenuCategory from '../../pages/menu-category/menu-category';
   imports: [],
   templateUrl: './menu-category-cards.html',
 })
-
-
 export class MenuCategoryCards {
-
   readonly imageUrl = input.required<string>();
-  readonly label = input.required<string>()
-  
+  readonly label = input.required<string>();
 }

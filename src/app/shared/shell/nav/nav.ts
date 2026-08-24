@@ -12,9 +12,9 @@ export class Nav {
   readonly shoppingCart = ShoppingCart;
   readonly search = Search;
   readonly menuIcon = MenuIcon;
-  readonly shoppingBag = ShoppingBag
-  readonly mapPin = MapPin
-  readonly pen = Pen
+  readonly shoppingBag = ShoppingBag;
+  readonly mapPin = MapPin;
+  readonly pen = Pen;
 
-  address = signal("BK Ballivian")
+  address = signal('BK Ballivian');
 }
