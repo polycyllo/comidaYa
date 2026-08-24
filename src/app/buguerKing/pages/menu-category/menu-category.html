@@ -6,7 +6,7 @@
 <ul
   class="flex text-brown-20 overflow-x-auto scrollbar-none font-fredoka px-5 "
 >
-  @for (category of categories(); track category.title) {
+  @for (category of categories(); track category.id) {
     <menu-category-cards
       [imageUrl]="category.img"
       [label]="category.title"
@@ -14,9 +14,18 @@
   }
 </ul>
 
-<ul>
-  @for (category of categories(); track category.title) {
-    <p class="font-extrabold text-brown-20 font-fredoka text-xl">{{category.title}}</p>
+<section class="space-y-8 px-5 py-6">
+  @for (category of categories(); track category.id) {
+    @let products = productsFor(category.id);
+    @if (products.length) {
+      <section>
+        <p class="font-fredoka text-xl font-extrabold text-brown-20">{{ category.title }}</p>
+        <div class="mt-3 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          @for (product of products; track product.id) {
+            <app-menu-card [item]="product" />
+          }
+        </div>
+      </section>
+    }
   }
-</ul>
-
+ </section>

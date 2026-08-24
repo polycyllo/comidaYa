@@ -1,4 +1,8 @@
-export interface MenuItem {
-  img: string;
+export interface MenuCardItem {
   title: string;
+  img?: string;
+}
+
+export interface MenuItem extends MenuCardItem {
+  img: string;
 }

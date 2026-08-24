@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { MenuItem } from '../../interfaces/MenuItem';
+import { MenuCardItem } from '../../interfaces/MenuItem';
 
 @Component({
   selector: 'app-menu-card',
@@ -7,5 +7,5 @@ import { MenuItem } from '../../interfaces/MenuItem';
   templateUrl: './menu-card.html',
 })
 export class MenuCard {
-  item = input.required<MenuItem>();
+  item = input.required<MenuCardItem>();
 }
