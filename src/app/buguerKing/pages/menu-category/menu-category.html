@@ -1,4 +1,11 @@
-<ul class="flex gap-4 overflow-x-auto">
+
+<div class="flex items-center justify-center">
+  <img src="menu/logo-menu.png" alt="logo-menu-image" class="w-1/3 py-5">
+</div>
+
+<ul
+  class="flex text-brown-20 overflow-x-auto scrollbar-none font-fredoka px-5 "
+>
   @for (category of categories(); track category.title) {
     <menu-category-cards
       [imageUrl]="category.img"
@@ -6,3 +13,10 @@
     />
   }
 </ul>
+
+<ul>
+  @for (category of categories(); track category.title) {
+    <p class="font-extrabold text-brown-20 font-fredoka text-xl">{{category.title}}</p>
+  }
+</ul>
+
