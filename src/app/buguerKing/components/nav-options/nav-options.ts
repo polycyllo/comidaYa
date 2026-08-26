@@ -1,12 +1,13 @@
+import { NgComponentOutlet } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { LucideAngularModule, LucideIconData } from 'lucide-angular';
+import { LucideIcon } from '@lucide/angular';
 
 @Component({
   selector: 'nav-options',
-  imports: [LucideAngularModule],
+  imports: [NgComponentOutlet],
   templateUrl: './nav-options.html',
 })
 export class NavOptions {
   label = input.required<string>();
-  icon = input<LucideIconData>();
+  icon = input<LucideIcon>();
 }

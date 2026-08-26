@@ -3,17 +3,17 @@
     <img
       src="/img_home.jpeg"
       alt="Promocion principal"
-      class="mx-auto w-full rounded-4xl object-contain md:h-[400px]"
+      class="mx-auto w-full rounded-4xl object-contain md:h-100"
     />
   </div>
   <section class="mt-14 px-5 md:px-10 lg:px-40">
-    <div class="flex justify-between font-serif text-xl text-brown-dark font-bold">
+    <div class="flex justify-between font-serif text-xl font-bold text-brown-dark">
       <h2 class="">Menú</h2>
       <h2>Ver todo</h2>
     </div>
     <div
       #menuCarousel
-      class="menu-carousel mt-7 sm:flex gap-4 overflow-x-auto px-2 grid grid-cols-2"
+      class="menu-carousel mt-7 grid grid-cols-2 gap-4 overflow-x-auto px-2 sm:flex"
       [class.cursor-grab]="!isDragging()"
       [class.cursor-grabbing]="isDragging()"
       [class.select-none]="isDragging()"

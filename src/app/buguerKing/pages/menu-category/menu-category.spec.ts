@@ -1,22 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { MenuCategory } from './menu-category';
+import { MENU_PRODUCTS } from '../../data/menu-products.data';
+import MenuCategory from './menu-category';
 
 describe('MenuCategory', () => {
-  let component: MenuCategory;
   let fixture: ComponentFixture<MenuCategory>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [MenuCategory],
-    }).compileComponents();
-
+    await TestBed.configureTestingModule({ imports: [MenuCategory] }).compileComponents();
     fixture = TestBed.createComponent(MenuCategory);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('renders a local image for every menu product card', () => {
+    const page = fixture.nativeElement as HTMLElement;
+    const productCards = Array.from(page.querySelectorAll<HTMLElement>('app-menu-card'));
+    const productImages = productCards.map((card) => card.querySelector('img'));
+
+    expect(productCards).toHaveLength(MENU_PRODUCTS.length);
+    expect(productImages).toHaveLength(MENU_PRODUCTS.length);
+    expect(
+      productImages.every((image) =>
+        image?.getAttribute('src')?.startsWith('/menu/menu-products-images/'),
+      ),
+    ).toBe(true);
   });
 });
