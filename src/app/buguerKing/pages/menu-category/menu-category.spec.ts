@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MENU_PRODUCTS } from '../../data/menu-products.data';
 import MenuCategory from './menu-category';
 
 describe('MenuCategory', () => {
@@ -10,17 +11,17 @@ describe('MenuCategory', () => {
     fixture.detectChanges();
   });
 
-  it('renders a text-only product card below its category title', () => {
+  it('renders a local image for every menu product card', () => {
     const page = fixture.nativeElement as HTMLElement;
-    const categoryTitle = Array.from(page.querySelectorAll<HTMLElement>('p')).find(
-      (heading) => heading.textContent?.trim() === 'Combos a la Parrilla',
-    );
-    const productCard = Array.from(page.querySelectorAll<HTMLElement>('app-menu-card')).find(
-      (card) => card.textContent?.trim().includes('Whopper'),
-    );
+    const productCards = Array.from(page.querySelectorAll<HTMLElement>('app-menu-card'));
+    const productImages = productCards.map((card) => card.querySelector('img'));
 
-    expect(categoryTitle).toBeTruthy();
-    expect(productCard).toBeTruthy();
-    expect(productCard?.querySelector('img')).toBeNull();
+    expect(productCards).toHaveLength(MENU_PRODUCTS.length);
+    expect(productImages).toHaveLength(MENU_PRODUCTS.length);
+    expect(
+      productImages.every((image) =>
+        image?.getAttribute('src')?.startsWith('/menu/menu-products-images/'),
+      ),
+    ).toBe(true);
   });
 });
