@@ -10,4 +10,8 @@ export const routes: Routes = [
     path: 'category',
     loadComponent: () => import('./buguerKing/pages/menu-category/menu-category'),
   },
+  {
+    path: 'probar',
+    loadComponent: () => import('./buguerKing/pages/menu-category-specific/menu-category'),
+  },
 ];
