@@ -1,26 +1,45 @@
-<section class="bg-may pt-12">
-  <div class="flex flex-col text-center">
-    <h1 class="font-fredoka text-5xl font-extrabold text-brown">King Ahorro</h1>
-    <h2 class="font-fredoka text-2xl font-semibold text-brown-20 mt-2">
-      Elige tu combo favorito para comenzar tu pedido
-    </h2>
-  </div>
-  <section class="flex mt-10 justify-center gap-5 w-full md:px-10 px-5 flex-col sm:flex-row">
-    <section class="flex flex-col gap-y-4 flex-1 min-w-0 max-w-[720px]">
-      @for (item of listMenu(); track item) {
-        <app-price-card
-          [data]="item"
-          [isSelected]="selectedId() === item.id"
-          (click)="setSelectedCard(item.id)"
+<div class="min-h-dvh flex flex-col">
+  <section class="bg-may pt-12 flex-1 pb-30">
+    <div class="flex flex-col text-center">
+      <h1 class="font-fredoka text-5xl font-extrabold text-brown">King Ahorro</h1>
+      <h2 class="font-fredoka text-2xl font-semibold text-brown-20 mt-2">
+        Elige tu combo favorito para comenzar tu pedido
+      </h2>
+    </div>
+    <section class="flex mt-10 justify-center gap-5 w-full md:px-10 px-5 flex-col sm:flex-row">
+      <section
+        class="flex flex-col gap-y-4 flex-1 min-w-0 max-w-[720px] max-h-[calc(100dvh-120px)] overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        @for (item of listMenu(); track item) {
+          <app-price-card
+            [data]="item"
+            [isSelected]="selectedId() === item.id"
+            (click)="setSelectedCard(item.id)"
+          />
+        }
+      </section>
+      <section class="md:hidden md:inline flex-1 min-w-0 max-w-[720px]">
+        <app-submenu-card
+          [data]="selectedSubMenu()"
+          [selectedOption]="selectedOptionId()"
+          (optionChange)="changeOption($event)"
         />
-      }
-    </section>
-    <section class="md:hidden md:inline flex-1 min-w-0 max-w-[720px]">
-      <app-submenu-card
-        [data]="selectedSubMenu()"
-        [selectedOption]="selectedOptionId()"
-        (optionChange)="changeOption($event)"
-      />
+      </section>
     </section>
   </section>
-</section>
+  <div
+    class="fixed bottom-2 left-0 right-0 z-20 bg-may-10/80 backdrop-blur-sm p-3 rounded-3xl lg::mx-48 flex justify-end shadow-xl mb-10 sm:mx-10"
+  >
+    <div
+      class="bg-gray-40 w-1/2 rounded-3xl text-center p-2"
+      [class.bg-red]="selectedOptionId() !== null"
+    >
+      <h3
+        class="text-gray-20 font-fredoka text-xl"
+        [class.text-white]="selectedOptionId() !== null"
+      >
+        Continuar
+      </h3>
+    </div>
+  </div>
+</div>

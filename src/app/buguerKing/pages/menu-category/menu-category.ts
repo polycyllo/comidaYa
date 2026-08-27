@@ -74,6 +74,75 @@ const list = [
       },
     ],
   },
+  {
+    id: 4,
+    img: '/menu/category/kingAhorro/americana.png',
+    name: 'Americana 1',
+    price: '20',
+    subMenu: [
+      {
+        id: 1,
+        name: 'opcion 1',
+        price: 10,
+      },
+      {
+        id: 2,
+        name: 'opcion 2',
+        price: 100,
+      },
+      {
+        id: 3,
+        name: 'opcion 3',
+        price: 1000,
+      },
+    ],
+  },
+  {
+    id: 5,
+    img: '/menu/category/kingAhorro/americana.png',
+    name: 'Americana 2',
+    price: '40',
+    subMenu: [
+      {
+        id: 1,
+        name: 'opcion 11',
+        price: 10,
+      },
+      {
+        id: 2,
+        name: 'opcion 22',
+        price: 100,
+      },
+      {
+        id: 3,
+        name: 'opcion 33',
+        price: 1000,
+      },
+    ],
+  },
+  {
+    id: 6,
+    img: '/menu/category/kingAhorro/americana.png',
+    name: 'Americana 3',
+    price: '15',
+    subMenu: [
+      {
+        id: 12,
+        name: 'opcion 12',
+        price: 10,
+      },
+      {
+        id: 2,
+        name: 'opcion 22',
+        price: 100,
+      },
+      {
+        id: 3,
+        name: 'opcion 32',
+        price: 1000,
+      },
+    ],
+  },
 ];
 @Component({
   selector: 'app-menu-category',
