@@ -8,6 +8,6 @@ export const routes: Routes = [
   },
   {
     path: 'probar',
-    loadComponent: () => import('./buguerKing/pages/menu-category/menu-category'),
+    loadComponent: () => import('./buguerKing/pages/menu-category-specific/menu-category'),
   },
 ];
