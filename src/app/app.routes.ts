@@ -7,7 +7,7 @@ export const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'category',
+    path: 'probar',
     loadComponent: () => import('./buguerKing/pages/menu-category/menu-category'),
   },
 ];
