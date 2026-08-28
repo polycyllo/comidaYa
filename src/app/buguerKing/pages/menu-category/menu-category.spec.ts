@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MENU_PRODUCTS } from '../../data/menu-products.data';
+import { MENU_SUBCATEGORIES } from '../../data/menu-products.data';
 import MenuCategory from './menu-category';
 
 describe('MenuCategory', () => {
@@ -11,17 +11,12 @@ describe('MenuCategory', () => {
     fixture.detectChanges();
   });
 
-  it('renders a local image for every menu product card', () => {
+  it('renders only cards for the official menu subcategories', () => {
     const page = fixture.nativeElement as HTMLElement;
-    const productCards = Array.from(page.querySelectorAll<HTMLElement>('app-menu-card'));
-    const productImages = productCards.map((card) => card.querySelector('img'));
+    const subcategoryCards = Array.from(page.querySelectorAll<HTMLElement>('app-menu-card'));
+    const cardTitles = subcategoryCards.map((card) => card.textContent?.trim());
 
-    expect(productCards).toHaveLength(MENU_PRODUCTS.length);
-    expect(productImages).toHaveLength(MENU_PRODUCTS.length);
-    expect(
-      productImages.every((image) =>
-        image?.getAttribute('src')?.startsWith('/menu/menu-products-images/'),
-      ),
-    ).toBe(true);
+    expect(subcategoryCards).toHaveLength(MENU_SUBCATEGORIES.length);
+    expect(cardTitles).toEqual(MENU_SUBCATEGORIES.map((subcategory) => subcategory.title));
   });
 });
