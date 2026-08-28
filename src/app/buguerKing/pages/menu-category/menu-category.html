@@ -3,11 +3,13 @@
     <img src="menu/logo-menu.png" alt="logo-menu-image" class="w-1/3 py-5" />
   </div>
 
-  <ul class="flex scrollbar-none overflow-x-auto px-5 font-fredoka text-brown-20">
-    @for (category of categories(); track category.id) {
-      <menu-category-cards [imageUrl]="category.img" [label]="category.title" />
-    }
-  </ul>
+  <div class="sticky top-0 z-20 bg-may">
+    <ul class="flex scrollbar-none overflow-x-auto px-5 font-fredoka text-brown-20">
+      @for (category of categories(); track category.id) {
+        <menu-category-cards [imageUrl]="category.img" [label]="category.title" />
+      }
+    </ul>
+  </div>
 
   <section class="space-y-8 px-5 py-6">
     @for (category of categories(); track category.id) {
