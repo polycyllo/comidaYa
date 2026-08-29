@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { MenuCard } from '../../components/menu-card/menu-card';
 import { MenuItem } from '../../interfaces/MenuItem';
 import { SeeLocations } from '../../components/see-locations/see-locations';
+import { RouterLink } from '@angular/router';
 
 const MENU_ITEMS: MenuItem[] = [
   {
@@ -48,7 +49,7 @@ const MENU_ITEMS: MenuItem[] = [
 
 @Component({
   selector: 'app-home-page',
-  imports: [MenuCard, SeeLocations],
+  imports: [MenuCard, SeeLocations, RouterLink],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
