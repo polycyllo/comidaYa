@@ -38,6 +38,6 @@ describe('Nav', () => {
       '#product-search',
     )?.parentElement;
 
-    expect(searchContainer?.className).toContain('lg:block');
+    expect(searchContainer?.className).toContain('lg:flex');
   });
 });
