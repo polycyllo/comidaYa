@@ -1,25 +1,44 @@
-<div class="flex items-center justify-center">
-  <img src="menu/logo-menu.png" alt="logo-menu-image" class="w-1/3 py-5" />
-</div>
+<main class="bg-may">
+  <div class="flex items-center justify-center md:w-screen">
+    <img src="menu/logo-menu.png" alt="logo-menu-image" class="w-1/3 py-5 md:w-40" />
+  </div>
 
-<ul class="flex scrollbar-none overflow-x-auto px-5 font-fredoka text-brown-20">
-  @for (category of categories(); track category.id) {
-    <menu-category-cards [imageUrl]="category.img" [label]="category.title" />
-  }
-</ul>
+  <div class="sticky top-18 z-20 bg-may">
+    <ul
+      #categoryScroller
+      class="flex scrollbar-none overflow-x-auto px-5 font-fredoka text-brown-20 md:justify-center"
+    >
+      @for (category of categories(); track category.id) {
+        <menu-category-cards
+          [imageUrl]="category.img"
+          [label]="category.title"
+          [categoryId]="category.id"
+          [active]="activeCategoryId() === category.id"
+          [attr.data-category-card-id]="category.id"
+          (selected)="scrollToCategory($event)"
+        />
+      }
+    </ul>
+  </div>
 
-<section class="space-y-8 px-5 py-6">
-  @for (category of categories(); track category.id) {
-    @let products = productsFor(category.id);
-    @if (products.length) {
-      <section>
-        <p class="font-fredoka text-xl font-extrabold text-brown-20">{{ category.title }}</p>
-        <div class="mt-3 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          @for (product of products; track product.id) {
-            <app-menu-card [item]="product" />
-          }
-        </div>
-      </section>
+  <section class="space-y-8 px-5 py-6 md:px-50">
+    @for (category of categories(); track category.id) {
+      @let subcategories = subcategoriesFor(category.id);
+      @if (subcategories.length) {
+        <section #categorySection [attr.data-category-id]="category.id" class="scroll-mt-60">
+          <p class="font-fredoka text-xl font-extrabold text-brown-20 md:text-3xl">
+            {{ category.title }}
+          </p>
+          <div class="mt-3 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            @for (subcategory of subcategories; track subcategory.id) {
+              <app-menu-card
+                [item]="subcategory"
+                class="rounded-2xl bg-white p-5 md:flex md:justify-center md:text-2xl"
+              />
+            }
+          </div>
+        </section>
+      }
     }
-  }
-</section>
+  </section>
+</main>

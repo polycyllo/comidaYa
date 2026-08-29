@@ -1,8 +1,13 @@
-<li class="shrink-0 py-5">
+<li class="h-44 shrink-0 py-5">
   <button
     type="button"
-    aria-pressed="false"
-    class="group w-42 overflow-hidden rounded-2xl bg-white text-center transition hover:bg-yellow focus-visible:outline-2 focus-visible:outline-brown"
+    [attr.aria-pressed]="active()"
+    class="group w-42 overflow-hidden rounded-2xl text-center transition focus-visible:outline-2 focus-visible:outline-brown"
+    [class.bg-yellow]="active()"
+    [class.text-brown]="active()"
+    [class.bg-may]="!active()"
+    [class.text-brown-20]="!active()"
+    (click)="selectCategory()"
   >
     <img
       src="/menu/card-menu-category/{{ imageUrl() }}"
