@@ -92,4 +92,21 @@ export default class MenuCategory implements AfterViewInit, OnDestroy {
       behavior: 'smooth',
     });
   }
+
+  scrollToCategory(categoryId: string): void {
+    const section = this.categorySections.find(
+      (item) => item.nativeElement.getAttribute('data-category-id') === categoryId,
+    );
+
+    if (!section) {
+      return;
+    }
+
+    this.activeCategoryId.set(categoryId);
+
+    section.nativeElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
 }

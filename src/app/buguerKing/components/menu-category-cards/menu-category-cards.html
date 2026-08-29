@@ -1,4 +1,4 @@
-<li class="shrink-0 py-5">
+<li class="h-44 shrink-0 py-5">
   <button
     type="button"
     [attr.aria-pressed]="active()"
@@ -7,6 +7,7 @@
     [class.text-brown]="active()"
     [class.bg-may]="!active()"
     [class.text-brown-20]="!active()"
+    (click)="selectCategory()"
   >
     <img
       src="/menu/card-menu-category/{{ imageUrl() }}"
